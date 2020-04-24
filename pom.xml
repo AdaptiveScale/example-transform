@@ -18,12 +18,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.example.hydrator.plugins</groupId>
-  <artifactId>example-transform</artifactId>
-  <version>1.1.0-SNAPSHOT</version>
+  <groupId>io.cdap.hydrator.plugins</groupId>
+  <artifactId>simple-mask</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>Example Transform</name>
+  <name>Simple Mask</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -33,7 +33,7 @@
          the CDAP version, but not always. -->
     <etl.versionRange>[6.0.0,10.0.0-SNAPSHOT)</etl.versionRange>
     <!-- This is the list of packages where your code exists. You can add multiple and separated with a ; or use wildcards *. -->
-    <exported-packages>org.example.hydrator.plugin.*</exported-packages>
+    <exported-packages>io.cdap.hydrator.plugin.*</exported-packages>
   </properties>
 
   <repositories>
@@ -60,6 +60,14 @@
       <version>${cdap.version}</version>
       <scope>provided</scope>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.soulwing/rot13 -->
+    <dependency>
+      <groupId>org.soulwing</groupId>
+      <artifactId>rot13</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
     <dependency>
       <groupId>io.cdap.cdap</groupId>
       <artifactId>cdap-unit-test</artifactId>

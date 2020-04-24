@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "spec-version": "1.4"
+  },
+  "display-name": "Scramble Text",
+  "configuration-groups": [
+    {
+      "label": "Scramble Text",
+      "properties": [
+        {
+          "widget-type": "textbox",
+          "label": "Scramble Text",
+          "name": "scrambleText",
+          "widget-attributes": {
+            "width": "large",
+            "default": "",
+            "placeholder:": "Add the field to scramble"
+          }
+        }
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "schema",
+      "label": "schema",
+      "widget-type": "schema"
+    }
+  ]
+}

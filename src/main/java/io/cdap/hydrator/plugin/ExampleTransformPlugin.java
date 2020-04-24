@@ -14,7 +14,7 @@
  * the License.
  */
 
-package org.example.hydrator.plugin;
+package io.cdap.hydrator.plugin;
 
 import io.cdap.cdap.api.annotation.Description;
 import io.cdap.cdap.api.annotation.Macro;
