@@ -97,13 +97,16 @@ public class ExampleTransformPlugin extends Transform<StructuredRecord, Structur
   @Override
   public void transform(StructuredRecord input, Emitter<StructuredRecord> emitter) throws Exception {
     // Get all the fields that are in the output schema
-    List<Schema.Field> fields = outputSchema.getFields();
+    List<Schema.Field> fields = input.getSchema().getFields();
     // Create a builder for creating the output record
     StructuredRecord.Builder builder = StructuredRecord.builder(outputSchema);
     // Add all the values to the builder
     for (Schema.Field field : fields) {
+
       String name = field.getName();
-      if (input.get(name) != null) {
+      if (input.get(name).equals("") || input.get(name) == null){
+        builder.set(name, "Empty value");
+      }else{
         builder.set(name, input.get(name));
       }
     }

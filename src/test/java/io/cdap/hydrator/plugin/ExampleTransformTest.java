@@ -40,12 +40,12 @@ public class ExampleTransformTest {
 
     MockEmitter<StructuredRecord> emitter = new MockEmitter<>();
     transform.transform(StructuredRecord.builder(INPUT)
-                          .set("a", "1")
+                          .set("a", "")
                           .set("b", "2")
                           .set("c", "3")
                           .set("d", "4")
                           .set("e", "5").build(), emitter);
-    Assert.assertEquals("1", emitter.getEmitted().get(0).get("a"));
+    Assert.assertEquals("Empty value", emitter.getEmitted().get(0).get("a"));
     Assert.assertEquals("2", emitter.getEmitted().get(0).get("b"));
     Assert.assertEquals("3", emitter.getEmitted().get(0).get("c"));
     Assert.assertEquals("4", emitter.getEmitted().get(0).get("d"));
